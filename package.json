@@ -19,9 +19,12 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-scroll": "^1.8.9",
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@types/react-scroll": "^1.8.6",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "autoprefixer": "^10.4.14",

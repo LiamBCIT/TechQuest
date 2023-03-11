@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn-primary-border {
+  background-color: #8064A2 !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -19,5 +23,6 @@ a {
 }
 
 body {
-  background: #e5f2fc;
+  background: #242A2D;
+  color: #fff;
 }
