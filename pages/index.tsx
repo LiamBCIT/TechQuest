@@ -1,10 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button, Spinner } from "react-bootstrap";
 import { FormEvent, useState } from "react";
-import Button from "react-bootstrap/esm/Button";
-import Spinner from "react-bootstrap/esm/Spinner";
 
 export default function Home() {
   const [quote, setQuote] = useState("");
