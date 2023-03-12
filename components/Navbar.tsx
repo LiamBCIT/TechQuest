@@ -1,14 +1,13 @@
-"use client" // this is a client component
-import React from "react"
-import { useState } from "react"
-import { Link } from "react-scroll/modules"
-import { usePathname } from "next/navigation"
-import { IoMdMenu, IoMdClose } from "react-icons/io"
-import Link2 from 'next/link'
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-scroll/modules";
+import { usePathname } from "next/navigation";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
+import Link2 from "next/link";
 
 interface NavItem {
-  label: string
-  page: string
+  label: string;
+  page: string;
 }
 
 const NAV_ITEMS: Array<NavItem> = [
@@ -28,11 +27,11 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Login",
     page: "login",
   },
-]
+];
 
 export default function Navbar() {
-  const pathname = usePathname()
-  const [navbar, setNavbar] = useState(false)
+  const pathname = usePathname();
+  const [navbar, setNavbar] = useState(false);
 
   return (
     <header className="w-full mx-auto px-4 sm:px-20 fixed top-0 z-50 mb-40">
@@ -52,7 +51,7 @@ export default function Navbar() {
                 {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
               </button>
             </div>
-          </div> 
+          </div>
         </div>
 
         <div>
@@ -68,7 +67,7 @@ export default function Navbar() {
                     key={idx}
                     to={item.page}
                     className={
-                      "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100"
+                      "block lg:inline-block text-neutral-400  hover:text-neutral-500 dark:text-neutral-100"
                     }
                     activeClass="active"
                     spy={true}
@@ -79,12 +78,12 @@ export default function Navbar() {
                   >
                     {item.label}
                   </Link>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

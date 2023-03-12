@@ -55,12 +55,9 @@ export default function Home() {
             Enter the Job Title
           </h1>
           <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              {/* <label className="block font-medium mb-2" htmlFor="prompt">
-              Create a interview questions...
-            </label> */}
+            <div className="mb-4 flex justify-center">
               <input
-                className="px-3 py-2 w-full border rounded-lg"
+                className="p-3 w-full border rounded-3xl bg-transparent max-w-sm text-center placeholder:text-white hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 type="text"
@@ -68,13 +65,27 @@ export default function Home() {
                 maxLength={100}
               />
             </div>
+            <div className="mb-4 flex justify-center">
+              <textarea
+                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-white hover:bg-transparent active:bg-transparent"
+                id="prompt"
+                name="prompt"
+                placeholder="response goes here..."
+                maxLength={100}
+                value={quote}
+                onChange={(e) => setQuote(e.target.value)}
+              />
+            </div>
+            <div className="text-center mt-6 tracking-widest font-bold text-base">
+              {quoteLoading
+                ? "Loading..."
+                : "Hit enter to generate a interview question!"}
+            </div>
             <button
               type="submit"
-              className="px-4 py-2 text-white rounded-lg disabled:bg-gray-400 disabled:cursor-not-allowed mt-8 border-white"
+              className="hidden"
               disabled={quoteLoading}
-            >
-              {quoteLoading ? "Loading..." : "Generate a question"}
-            </button>
+            ></button>
           </form>
           {quoteLoading && <Spinner animation="border" className="mt-8" />}
           {quoteLoadingError && (
@@ -82,7 +93,6 @@ export default function Home() {
               There was an error loading the interview questions
             </div>
           )}
-          {quote && <h5 className="mt-8 border-white">{quote}</h5>}
         </div>
       </main>
     </>
