@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { FormEvent, useState } from "react";
 import Navbar from "@/components/Navbar";
+import Link2 from "next/link";
 
 export default function Index() {
   return (
@@ -34,12 +35,16 @@ export default function Index() {
             </h3>
             <div className="flex">
               {/* <button className="bg-white text-black py-6 mb-12 px-12 border border-white-50 rounded-3xl hover:bg-slate-300 w-40 h-10">Demo</button> */}
+              <Link2 href="/generator">
               <button className="bg-white hover:bg-white-500 text-black font-semibold px-6 border border-white-500 hover:bg-slate-300 rounded-3xl mt-6 inline w-40 h-10">
                 Demo
               </button>
+              </Link2>
+              <Link2 href="/about">
               <button className="ml-4 bg-transparent hover:bg-white-500 text-white-700 font-semibold px-6 border border-white-500 hover:text-slate-300 rounded-3xl mt-6 inline w-40 h-10">
-                Sign Up
+                About
               </button>
+              </Link2>
             </div>
           </div>
           <div className="relative">
