@@ -27,7 +27,7 @@ export default function TechInterviewQuestionGenerator({
           <form onSubmit={handleSubmit}>
             <div className="mb-4 flex justify-center">
               <input
-                className="p-3 w-full border rounded-3xl bg-transparent max-w-sm text-center placeholder:text-slate-400 hover:bg-transparent active:bg-transparent"
+                className="p-3 w-full border rounded-3xl bg-transparent max-w-sm text-center placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 type="text"
