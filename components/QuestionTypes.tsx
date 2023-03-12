@@ -28,7 +28,8 @@ export default function QuestionTypes({
   return (
     <>
       <div className="flex flex-col justify-center items-center mx-auto relative">
-        <h1 className="text-white text-2xl sm:text-4xl md:text-5xl font-semibold my-8">
+        {/* <h1 className="text-white text-3xl sm:text-3xl md:text-3xl font-medium mb-12"> */}
+        <h1 className="text-3xl md:text-3xl font-medium">
           Choose Interview Question Type
         </h1>
         <div className="grid grid-cols-2 mt-3">

@@ -14,19 +14,15 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",
-    page: "home",
+    page: "/home"
   },
   {
     label: "About",
-    page: "about",
+    page: "/about",
   },
   {
-    label: "Login",
-    page: "login",
-  },
-  {
-    label: "Sign Up",
-    page: "Signup",
+    label: "Generator",
+    page: "/generator",
   },
 ];
 
@@ -65,25 +61,21 @@ export default function Navbar() {
             }`}
           >
             <div className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 p-8">
-              {NAV_ITEMS.map((item, idx) => {
-                return (
-                  <Link
-                    key={idx}
-                    to={item.page}
-                    className={
-                      "block lg:inline-block text-neutral-300  hover:text-neutral-500 dark:text-neutral-100 border-neutral-500"
-                    }
-                    activeClass="active"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    onClick={() => setNavbar(!navbar)}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
+                <Link2
+                        className={"block lg:inline-block text-neutral-300  hover:text-neutral-500 dark:text-neutral-100 border-neutral-500"}
+                        onClick={() => setNavbar(!navbar)} href={"/home"}>
+                    Home
+                </Link2>
+                <Link2
+                        className={"block lg:inline-block text-neutral-300  hover:text-neutral-500 dark:text-neutral-100 border-neutral-500"}
+                        onClick={() => setNavbar(!navbar)} href={"/about"}>
+                    About
+                </Link2>
+                <Link2
+                        className={"block lg:inline-block text-neutral-300  hover:text-neutral-500 dark:text-neutral-100 border-neutral-500"}
+                        onClick={() => setNavbar(!navbar)} href={"/generator"}>
+                    Generator
+                </Link2>
             </div>
           </div>
         </div>
