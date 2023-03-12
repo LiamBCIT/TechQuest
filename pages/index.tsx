@@ -21,7 +21,7 @@ export default function Home() {
         setQuoteLoading(true);
         setQuoteLoadingError(false);
         const response = await fetch(
-          "/api/quest?prompt=" + encodeURIComponent(prompt)
+          "/api/quest?prompt="+encodeURIComponent(prompt)
         );
         const data = await response.json();
         console.log("data", data);
@@ -49,7 +49,7 @@ export default function Home() {
 
       <Navbar />
 
-      <main className="mt-48 py-6 md:py-12 justify-center">
+      <main className="mt-24 py-6 md:py-12 justify-center">
         <div className="container px-4 mx-auto justify-center text-center">
           <h1 className="text-3xl md:text-4xl font-medium mb-12">
             Enter the Job Title
@@ -57,17 +57,17 @@ export default function Home() {
           <form onSubmit={handleSubmit}>
             <div className="mb-4 flex justify-center">
               <input
-                className="p-3 w-full border rounded-3xl bg-transparent max-w-sm text-center placeholder:text-white hover:bg-transparent active:bg-transparent"
+                className="p-3 w-full border rounded-3xl bg-transparent max-w-sm text-center placeholder:text-grey hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 type="text"
-                placeholder="e.g. full-stack, front-end, backend..."
+                placeholder="e.g: Frontend Developer"
                 maxLength={100}
               />
             </div>
             <div className="mb-4 flex justify-center">
               <textarea
-                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
+                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-gre hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 placeholder="response goes here..."
@@ -76,16 +76,16 @@ export default function Home() {
                 onChange={(e) => setQuote(e.target.value)}
               />
             </div>
-            <div className="text-center mt-6 tracking-widest font-bold text-base">
+            <div className="text-center mt-6 tracking-widest font-regular text-base">
               {quoteLoading
                 ? "Loading..."
-                : "Hit enter to generate a interview question!"}
+                : ""}
             </div>
             <button
               type="submit"
-              className="hidden"
+              className="bg-white text-black py-2 px-4 border border-white-50 rounded-3xl hover:bg-slate-300"
               disabled={quoteLoading}
-            ></button>
+            >Generate Question</button>
           </form>
           {quoteLoading && <Spinner />}
           {quoteLoadingError && (
@@ -93,6 +93,7 @@ export default function Home() {
               There was an error loading the interview questions
             </div>
           )}
+
         </div>
       </main>
     </>
