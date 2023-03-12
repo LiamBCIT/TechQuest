@@ -21,7 +21,7 @@ export default function About() {
       <Navbar />
 
       <main className="max-w-screen-lg mx-auto px-4 md:px-8 py-16 md:py-20">
-        <h1 className="text-2xl md:text-5xl font-medium text-center mb-8">
+        <h1 className="text-2xl md:text-5xl font-medium text-center mb-10">
           About
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">

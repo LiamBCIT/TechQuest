@@ -117,7 +117,7 @@ export default function Navbar() {
           }}
           className={
             nav
-              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-slate-900 p-10 ease-in duration-500"
+              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen p-10 ease-in duration-500 bg-black/80 z-20 opacity-100"
               : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
           }
         >
