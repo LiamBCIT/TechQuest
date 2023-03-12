@@ -47,11 +47,6 @@ export default function QuestionTypes({
             </button>
           ))}
         </div>
-        <img
-          src="/circles_1.png"
-          alt=""
-          className="hidden sm:absolute sm:bottom-16 sm:left-4 sm:w-40 sm:block"
-        />
       </div>
     </>
   );
