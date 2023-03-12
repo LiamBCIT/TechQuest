@@ -40,7 +40,7 @@ export default function QuestionTypes({
                 selectedQuestionType === type
                   ? "gray-700 text-white"
                   : "gray-200 text-gray-700"
-              } bg-white rounded-full px-4 py-2 m-4 text-gray-600 font-bold text-base focus:outline-none hover:bg-gray-200 transition-colors duration-300`}
+              } bg-white rounded-full px-4 py-2 m-4 text-gray-600 font-bold text-base focus:outline-none transition-colors duration-300`}
             >
               {type}
             </button>

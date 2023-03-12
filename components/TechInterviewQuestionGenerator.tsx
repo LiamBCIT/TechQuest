@@ -19,7 +19,7 @@ export default function TechInterviewQuestionGenerator({
 }: TechInterviewQuestionGeneratorProps) {
   return (
     <>
-      <main className="mt-28 flex flex-col justify-center items-center mx-auto relative">
+      <main className="mt-10 flex flex-col justify-center items-center mx-auto relative min-h-[600px]">
         <div className="container px-4 mx-auto justify-center text-center">
           <h1 className="text-3xl md:text-4xl font-medium mb-12">
             Enter the Job Title
