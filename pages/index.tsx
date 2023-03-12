@@ -4,7 +4,7 @@ import React from "react";
 import { FormEvent, useState } from "react";
 import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <Head>
@@ -18,11 +18,12 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <main
+      
+    <main
         id="home"
         className="mt-48 mx-80 flex flex-col text-left items-center justify-center animate-fadeIn animation-delay-2"
       >
-        <div className="flex mb-4 space-between space-x-40">
+        <div className="flex mb-4 space-x-40">
           <div className="">
             <h1 className="justify-items-center text-6xl md:text-4.688xl font-medium mb-12">
               Need <br /> interview <br /> practice?{" "}
@@ -41,16 +42,18 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="">
+          <div className="relative">
             <img
               src="homeimg.png"
               alt="Interviewee's looking up questions"
               width="1400"
               height="1400"
+              className="max-[350px]:hidden"
             />
           </div>
         </div>
       </main>
+
     </>
   );
 }
