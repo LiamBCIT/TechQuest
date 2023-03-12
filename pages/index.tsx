@@ -4,7 +4,7 @@ import React from "react";
 import { FormEvent, useState } from "react";
 import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <Head>
