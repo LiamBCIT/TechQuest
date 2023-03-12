@@ -1,10 +1,10 @@
-"use client" // this is a client component
 import React from "react"
 import { useState } from "react"
 import { Link } from "react-scroll/modules"
 import { usePathname } from "next/navigation"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
 import Link2 from 'next/link'
+import { BsPersonWorkspace } from "react-icons/bs"
 
 interface NavItem {
   label: string
@@ -21,12 +21,12 @@ const NAV_ITEMS: Array<NavItem> = [
     page: "meettheteam",
   },
   {
-    label: "Sign Up",
-    page: "Signup",
-  },
-  {
     label: "Login",
     page: "login",
+  },
+  {
+    label: "Sign Up",
+    page: "Signup",
   },
 ]
 
@@ -39,11 +39,14 @@ export default function Navbar() {
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link to="home">
+          <Link2
+            href="/home"    
+            className="hover:text-teal-600"
+          >
               <div className="container flex items-center space-x-2">
-                <h2 className="text-2xl font-bold text-white-500">TechQuest</h2>
+                <BsPersonWorkspace/><span className="text-2xl font-bold text-white-500">TechQuest</span>
               </div>
-            </Link>
+            </Link2>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -68,7 +71,7 @@ export default function Navbar() {
                     key={idx}
                     to={item.page}
                     className={
-                      "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100"
+                      "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100 border-neutral-500"
                     }
                     activeClass="active"
                     spy={true}
