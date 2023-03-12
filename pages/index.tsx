@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import { Form, Button, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { FormEvent, useState } from "react";
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [quote, setQuote] = useState("");
@@ -50,35 +50,49 @@ export default function Home() {
       <Navbar />
 
       <main className="mt-48 py-6 md:py-12 justify-center">
-      <div className="container px-4 mx-auto justify-center text-center">
-        <h1 className="text-3xl md:text-4xl font-medium mb-12">Enter the Job Title</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            {/* <label className="block font-medium mb-2" htmlFor="prompt">
-              Create a interview questions...
-            </label> */}
-            <input
-              className="px-3 py-2 w-full border rounded-lg"
-              id="prompt"
-              name="prompt"
-              type="text"
-              placeholder="e.g. full-stack, front-end, backend..."
-              maxLength={100}
-            />
-          </div>
-          <button
-            type="submit"
-            className="px-4 py-2 text-white rounded-lg disabled:bg-gray-400 disabled:cursor-not-allowed mt-8 border-white"
-            disabled={quoteLoading}
-          >
-            {quoteLoading ? "Loading..." : "Generate a question"}
-          </button>
-        </form>
+        <div className="container px-4 mx-auto justify-center text-center">
+          <h1 className="text-3xl md:text-4xl font-medium mb-12">
+            Enter the Job Title
+          </h1>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4 flex justify-center">
+              <input
+                className="p-3 w-full border rounded-3xl bg-transparent max-w-sm text-center placeholder:text-white hover:bg-transparent active:bg-transparent"
+                id="prompt"
+                name="prompt"
+                type="text"
+                placeholder="e.g. full-stack, front-end, backend..."
+                maxLength={100}
+              />
+            </div>
+            <div className="mb-4 flex justify-center">
+              <textarea
+                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-white hover:bg-transparent active:bg-transparent"
+                id="prompt"
+                name="prompt"
+                placeholder="response goes here..."
+                maxLength={100}
+                value={quote}
+                onChange={(e) => setQuote(e.target.value)}
+              />
+            </div>
+            <div className="text-center mt-6 tracking-widest font-bold text-base">
+              {quoteLoading
+                ? "Loading..."
+                : "Hit enter to generate a interview question!"}
+            </div>
+            <button
+              type="submit"
+              className="hidden"
+              disabled={quoteLoading}
+            ></button>
+          </form>
           {quoteLoading && <Spinner animation="border" className="mt-8" />}
           {quoteLoadingError && (
-            <div className="mt-12 border-white">There was an error loading the interview questions</div>
+            <div className="mt-12 border-white">
+              There was an error loading the interview questions
+            </div>
           )}
-          {quote && <h5 className="mt-8 border-white">{quote}</h5>}
         </div>
       </main>
     </>
