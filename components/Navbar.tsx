@@ -85,19 +85,23 @@ export default function Navbar() {
         <div>
           <ul style={{ color: `${navColor}` }} className="hidden md:flex">
             <Link href="/" scroll={false}>
-              <li className="mx-5 text-sm uppercase hover:border-b">Home</li>
+              <li className="mx-5 text-sm uppercase hover:border-b text-gray-400">
+                Home
+              </li>
             </Link>
             <Link href="/about" scroll={false}>
-              <li className="mx-5 text-sm uppercase hover:border-b">About</li>
+              <li className="mx-5 text-sm uppercase hover:border-b text-gray-400">
+                About
+              </li>
             </Link>
             <Link href="/generator" scroll={false}>
-              <li className="mx-5 text-sm uppercase hover:border-b">
+              <li className="mx-5 text-sm uppercase hover:border-b text-gray-400">
                 Generator
               </li>
             </Link>
           </ul>
         </div>
-        <div onClick={handleNav} className="md:hidden">
+        <div onClick={handleNav} className="md:hidden mr-2">
           <AiOutlineMenu size={25} />
         </div>
       </div>
