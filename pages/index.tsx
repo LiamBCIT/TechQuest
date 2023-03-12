@@ -18,8 +18,8 @@ export default function Index() {
       </Head>
 
       <Navbar />
-      
-    <main
+
+      <main
         id="home"
         className="mt-48 mx-80 flex flex-col text-left items-center justify-center animate-fadeIn animation-delay-2"
       >
@@ -53,7 +53,6 @@ export default function Index() {
           </div>
         </div>
       </main>
-
     </>
   );
 }

@@ -2,8 +2,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import { Form, Button, Spinner } from "react-bootstrap";
-import { FormEvent, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Link2 from "next/link";
 
