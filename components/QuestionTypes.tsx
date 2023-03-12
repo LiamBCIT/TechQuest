@@ -29,7 +29,7 @@ export default function QuestionTypes({
     <>
       <div className="flex flex-col justify-center items-center mx-auto relative">
         {/* <h1 className="text-white text-3xl sm:text-3xl md:text-3xl font-medium mb-12"> */}
-        <h1 className="text-3xl md:text-3xl font-medium">
+        <h1 className="text-2xl text-center md:text-3xl font-medium">
           Choose Interview Question Type
         </h1>
         <div className="grid grid-cols-2 mt-3">
@@ -39,9 +39,9 @@ export default function QuestionTypes({
               onClick={() => handleQuestionTypeSelect(type)}
               className={`bg-${
                 selectedQuestionType === type
-                  ? "gray-700 text-white"
+                  ? "gray-900 text-white bg-gray-700 hover:bg-gray-700"
                   : "gray-200 text-gray-700"
-              } bg-white rounded-full px-4 py-2 m-4 text-gray-600 font-bold text-base focus:outline-none transition-colors duration-300`}
+              } bg-white rounded-full px-4 py-2 m-4 font-bold text-base focus:outline-none hover:bg-gray-200 transition-colors duration-300`}
             >
               {type}
             </button>

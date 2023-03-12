@@ -37,7 +37,7 @@ export default function TechInterviewQuestionGenerator({
             </div>
             <div className="mb-4 flex justify-center">
               <textarea
-                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-slate-400 hover:bg-transparent active:bg-transparent"
+                className="p-5 h-64 w-full border rounded-3xl bg-transparent sm:min-w-[320px] placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 placeholder="response generated here..."
@@ -47,9 +47,7 @@ export default function TechInterviewQuestionGenerator({
               />
             </div>
             <div className="text-center mt-6 tracking-widest font-bold text-base">
-              {quoteLoading
-                ? "Loading..."
-                : ""}
+              {quoteLoading ? "Loading..." : ""}
             </div>
             <button
               type="submit"
@@ -57,7 +55,9 @@ export default function TechInterviewQuestionGenerator({
               // className="bg-white hover:bg-white-500font-semibold px-6 border border-white-500 hover:bg-slate-300 rounded-3xl mt-6 inline w-40 h-10 text-black"
               className="bg-white hover:bg-white-500 font-semibold px-6 border border-white-500 hover:bg-slate-300 rounded-3xl mt-6 inline w-40 h-10 text-black"
               disabled={quoteLoading}
-              >Enter</button>
+            >
+              Enter
+            </button>
           </form>
           {quoteLoading && <Spinner />}
           {quoteLoadingError && (
