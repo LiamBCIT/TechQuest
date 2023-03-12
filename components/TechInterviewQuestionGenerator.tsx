@@ -1,55 +1,25 @@
-import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import { FormEvent, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Spinner from "@/components/Spinner";
+import Spinner from "./Spinner";
 
-export default function Home() {
-  const [quote, setQuote] = useState("");
-  const [quoteLoading, setQuoteLoading] = useState(false);
-  const [quoteLoadingError, setQuoteLoadingError] = useState(false);
+interface TechInterviewQuestionGeneratorProps {
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  quote: string;
+  setQuote: React.Dispatch<React.SetStateAction<string>>;
+  quoteLoading: boolean;
+  quoteLoadingError: boolean;
+}
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formaData = new FormData(e.target as HTMLFormElement);
-    const prompt = formaData.get("prompt")?.toString().trim();
-
-    if (prompt) {
-      try {
-        setQuote("");
-        setQuoteLoading(true);
-        setQuoteLoadingError(false);
-        const response = await fetch(
-          "/api/quest?prompt=" + encodeURIComponent(prompt)
-        );
-        const data = await response.json();
-        console.log("data", data);
-        setQuote(data.quote);
-      } catch (error) {
-        console.error(error);
-        setQuoteLoadingError(true);
-      } finally {
-        setQuoteLoading(false);
-      }
-    }
-  }
-
+export default function TechInterviewQuestionGenerator({
+  handleSubmit,
+  quote,
+  setQuote,
+  quoteLoading,
+  quoteLoadingError,
+}: TechInterviewQuestionGeneratorProps) {
   return (
     <>
-      <Head>
-        <title>TechQuest</title>
-        <meta
-          name="description"
-          content="A website using AI Prompts to help those in the tech industry prepare for interviews"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Navbar />
-
-      <main className="mt-48 py-6 md:py-12 justify-center">
+      <main className="mt-28 flex flex-col justify-center items-center mx-auto relative">
         <div className="container px-4 mx-auto justify-center text-center">
           <h1 className="text-3xl md:text-4xl font-medium mb-12">
             Enter the Job Title
@@ -67,7 +37,7 @@ export default function Home() {
             </div>
             <div className="mb-4 flex justify-center">
               <textarea
-                className="p-3 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
+                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 placeholder="response goes here..."
