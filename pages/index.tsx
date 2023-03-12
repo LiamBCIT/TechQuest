@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import { Spinner } from "react-bootstrap";
 import { FormEvent, useState } from "react";
 import Navbar from "@/components/Navbar";
+import Spinner from "@/components/Spinner";
 
 export default function Home() {
   const [quote, setQuote] = useState("");
@@ -67,7 +67,7 @@ export default function Home() {
             </div>
             <div className="mb-4 flex justify-center">
               <textarea
-                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-white hover:bg-transparent active:bg-transparent"
+                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 placeholder="response goes here..."
@@ -87,7 +87,7 @@ export default function Home() {
               disabled={quoteLoading}
             ></button>
           </form>
-          {quoteLoading && <Spinner animation="border" className="mt-8" />}
+          {quoteLoading && <Spinner />}
           {quoteLoadingError && (
             <div className="mt-12 border-white">
               There was an error loading the interview questions
