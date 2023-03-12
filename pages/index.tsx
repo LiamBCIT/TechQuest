@@ -67,7 +67,7 @@ export default function Home() {
             </div>
             <div className="mb-4 flex justify-center">
               <textarea
-                className="p-5 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
+                className="p-3 h-64 w-full border rounded-3xl bg-transparent max-w-sm placeholder:text-neutral-400 hover:bg-transparent active:bg-transparent"
                 id="prompt"
                 name="prompt"
                 placeholder="response goes here..."
