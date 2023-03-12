@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full mx-auto px-4 sm:px-20 fixed top-0 z-50 mb-40">
-      <div className="justify-between md:items-center md:flex">
+      <div className="justify-between md:items-center md:flex mb-40">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link2 href="/" className="hover:text-teal-600">
